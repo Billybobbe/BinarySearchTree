@@ -23,15 +23,21 @@ public class Recursion {
     // All other terms are equal to the sum of the
     // previous two terms
     public static int fib(int n) {
-        // REPLACE WITH YOUR CODE HERE
-        return -1;
+        if(n <= 2){
+            return 1;
+        }
+        else{
+            return fib(n-1) + fib(n-2);
+        }
     }
 
     // Adds up all the digits in a number
     // Recall that you can use % 10 to get the last digit
     public static int sumDigits(int num) {
-        // REPLACE WITH YOUR CODE HERE
-        return -1;
+        if(num == 0){
+            return 0;
+        }
+        return num%10 + sumDigits(num/10);
     }
 
     public static void main(String[] args) {
@@ -183,8 +189,13 @@ class IntLinkedList {
     // Carries out search, recursively
     // This method will initially be given the head node
     public static boolean searchRec(int val, IntNode current) {
-        // REPLACE WITH YOUR CODE HERE
-        return false;
+        if(current.next == null){
+            return current.data == val;
+        }
+        else if(current.data == val){
+            return true;
+        }
+        return searchRec(val, current.next);
     }
 
 
